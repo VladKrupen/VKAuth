@@ -34,8 +34,10 @@ final class MainCoordinator: AppCoordinator {
     }
     
     private func showProfileFlow() {
-        let profileCoordinator = CoordinatorBuilder.createProfileCoordinator(navigationController: navigationController) {
-            //TODO: - FlowCompletionHandler
+        let profileCoordinator = CoordinatorBuilder.createProfileCoordinator(navigationController: navigationController) { [weak self] in
+            AppConfig.shared.authType = nil
+            self?.childCoordinators = .init()
+            self?.showAuthFlow()
         }
         childCoordinators.append(profileCoordinator)
         profileCoordinator.start()

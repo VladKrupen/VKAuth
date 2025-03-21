@@ -62,6 +62,10 @@
 		015490AC2D8DCDAB008B1ECA /* VKUserInfoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490AB2D8DCDAB008B1ECA /* VKUserInfoClient.swift */; };
 		015490AF2D8DD19D008B1ECA /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490AE2D8DD19D008B1ECA /* NetworkingRequest.swift */; };
 		015490B12D8DD2C2008B1ECA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490B02D8DD2C2008B1ECA /* ServiceManager.swift */; };
+		015490B62D8DE2D0008B1ECA /* VKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490B52D8DE2D0008B1ECA /* VKError.swift */; };
+		01652C492D8DFCC4002F08EC /* RefreshTokenClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01652C482D8DFCC4002F08EC /* RefreshTokenClientService.swift */; };
+		01652C4B2D8DFEC4002F08EC /* RefreshTokenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01652C4A2D8DFEC4002F08EC /* RefreshTokenError.swift */; };
+		01652C4F2D8DFFBE002F08EC /* RefreshTokenClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01652C4E2D8DFFBE002F08EC /* RefreshTokenClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +124,10 @@
 		015490AB2D8DCDAB008B1ECA /* VKUserInfoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUserInfoClient.swift; sourceTree = "<group>"; };
 		015490AE2D8DD19D008B1ECA /* NetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequest.swift; sourceTree = "<group>"; };
 		015490B02D8DD2C2008B1ECA /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		015490B52D8DE2D0008B1ECA /* VKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKError.swift; sourceTree = "<group>"; };
+		01652C482D8DFCC4002F08EC /* RefreshTokenClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenClientService.swift; sourceTree = "<group>"; };
+		01652C4A2D8DFEC4002F08EC /* RefreshTokenError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenError.swift; sourceTree = "<group>"; };
+		01652C4E2D8DFFBE002F08EC /* RefreshTokenClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenClient.swift; sourceTree = "<group>"; };
 		01B5A6152D8857F9008794A2 /* VKAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -317,6 +325,7 @@
 				011EAB442D896C52003F615B /* Auth */,
 				011EAB682D8ACF60003F615B /* Keychain */,
 				015490822D8D838F008B1ECA /* Network */,
+				01652C472D8DFCA2002F08EC /* RefreshToken */,
 				0154908C2D8D8F4D008B1ECA /* TokenStorage */,
 				0154909B2D8DAB2B008B1ECA /* UserInfo */,
 			);
@@ -631,6 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				015490A32D8DB0C6008B1ECA /* UserInfoClientError.swift */,
+				015490B52D8DE2D0008B1ECA /* VKError.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -667,6 +677,32 @@
 				015490AE2D8DD19D008B1ECA /* NetworkingRequest.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		01652C472D8DFCA2002F08EC /* RefreshToken */ = {
+			isa = PBXGroup;
+			children = (
+				01652C482D8DFCC4002F08EC /* RefreshTokenClientService.swift */,
+				01652C4C2D8DFFA9002F08EC /* Protocol */,
+				01652C4D2D8DFFAD002F08EC /* Constants */,
+			);
+			path = RefreshToken;
+			sourceTree = "<group>";
+		};
+		01652C4C2D8DFFA9002F08EC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				01652C4E2D8DFFBE002F08EC /* RefreshTokenClient.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		01652C4D2D8DFFAD002F08EC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				01652C4A2D8DFEC4002F08EC /* RefreshTokenError.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		01B5A60C2D8857F9008794A2 = {
@@ -771,6 +807,7 @@
 				015490982D8D9F0A008B1ECA /* NetworkClientError.swift in Sources */,
 				011EAB502D896E90003F615B /* VKAuthClientService.swift in Sources */,
 				011EAB602D89B270003F615B /* RequestRemoteMethod.swift in Sources */,
+				01652C4B2D8DFEC4002F08EC /* RefreshTokenError.swift in Sources */,
 				011EAB712D8AE3C4003F615B /* ProfileViewModel.swift in Sources */,
 				015490AC2D8DCDAB008B1ECA /* VKUserInfoClient.swift in Sources */,
 				011EAB0D2D8858C2003F615B /* AppDelegate.swift in Sources */,
@@ -792,6 +829,7 @@
 				0154907C2D8D40FF008B1ECA /* VKAuthClient.swift in Sources */,
 				011EAB492D896DA3003F615B /* AuthType.swift in Sources */,
 				0154908E2D8D8F8E008B1ECA /* TokenStorageService.swift in Sources */,
+				01652C492D8DFCC4002F08EC /* RefreshTokenClientService.swift in Sources */,
 				011EAB2A2D885E00003F615B /* ModuleBuilder.swift in Sources */,
 				011EAB3A2D88635D003F615B /* AuthViewModel.swift in Sources */,
 				0135991F2D8C458500F0E95E /* User.swift in Sources */,
@@ -810,10 +848,12 @@
 				011EAB6A2D8ACFB5003F615B /* KeychainService.swift in Sources */,
 				015490842D8D83AA008B1ECA /* NetworkClientService.swift in Sources */,
 				011EAB672D8AAB93003F615B /* NetworkError.swift in Sources */,
+				01652C4F2D8DFFBE002F08EC /* RefreshTokenClient.swift in Sources */,
 				015490A12D8DAB8C008B1ECA /* UserInfoClient.swift in Sources */,
 				0154907E2D8D4DE2008B1ECA /* ProfileLabelView.swift in Sources */,
 				011EAB342D885F55003F615B /* AuthViewController.swift in Sources */,
 				011EAB282D885D82003F615B /* CoordinatorBuilder.swift in Sources */,
+				015490B62D8DE2D0008B1ECA /* VKError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

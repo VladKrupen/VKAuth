@@ -21,7 +21,12 @@ final class ProfileCoordinator: Coordinator {
     }
     
     private func showProfileModule() {
-        let profileController = ModuleBuilder.createProfileModule()
+        let profileController = ModuleBuilder.createProfileModule { [weak self] action in
+            switch action {
+            case .redirectToAuth:
+                self?.flowCompletionHandler()
+            }
+        }
         navigationController.setViewControllers([profileController], animated: true)
     }
 }

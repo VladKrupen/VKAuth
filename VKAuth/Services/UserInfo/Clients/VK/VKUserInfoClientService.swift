@@ -46,6 +46,11 @@ extension VKUserInfoClientService {
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
             
+            if let errorResponseDictionary = json?["error"] as? String {
+                let vkError = VKError(rawValue: errorResponseDictionary)
+                return .failure(.vkError(vkError))
+            }
+            
             guard let userDictionary = json?["user"] as? [String: Any] else {
                 return .failure(.invalidJsonFormat("The data is not a dictionary"))
             }

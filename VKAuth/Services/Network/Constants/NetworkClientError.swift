@@ -13,4 +13,6 @@ enum NetworkClientError: LocalizedError {
     case networkError(NetworkError)
     case tokenStorageError(TokenStorageError)
     case userInfoError(UserInfoClientError)
+    case refreshTokenError(RefreshTokenError)
+    case sessionInvalid
 }

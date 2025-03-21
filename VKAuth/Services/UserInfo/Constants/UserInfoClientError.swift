@@ -12,4 +12,5 @@ enum UserInfoClientError: LocalizedError {
     case networkError(NetworkError)
     case invalidJsonFormat(String)
     case decodingError(Error)
+    case vkError(VKError)
 }

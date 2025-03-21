@@ -12,7 +12,7 @@ struct VKUser: Codable, User {
     let firstName: String
     let lastName: String
     let phone: String?
-    let avatar: String
+    let avatar: String?
 }
 
 // MARK: - CodingKeys

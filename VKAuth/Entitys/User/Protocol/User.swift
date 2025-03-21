@@ -12,5 +12,5 @@ protocol User {
     var firstName: String { get }
     var lastName: String { get }
     var phone: String? { get }
-    var avatar: String { get }
+    var avatar: String? { get }
 }

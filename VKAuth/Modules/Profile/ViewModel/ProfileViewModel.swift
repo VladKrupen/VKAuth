@@ -18,9 +18,14 @@ final class ProfileViewModel: ProfileViewModelProtocol {
     var userPublisher: PassthroughSubject<User, Never> = .init()
     var cancellables: Set<AnyCancellable> = .init()
     private let networkClient: NetworkClient
+    private let onAction: (Action) -> Void
     
-    init(networkClient: NetworkClient) {
+    init(
+        networkClient: NetworkClient,
+        onAction: @escaping (Action) -> Void
+    ) {
         self.networkClient = networkClient
+        self.onAction = onAction
     }
 }
 
@@ -33,9 +38,30 @@ extension ProfileViewModel {
             case .success(let user):
                 self?.userPublisher.send(user)
             case .failure(let error):
-                // TODO: - Handle Error
-                print(error)
+                self?.handleError(error: error)
             }
+        }
+    }
+}
+
+// MARK: - Action
+
+extension ProfileViewModel {
+    enum Action {
+        case redirectToAuth
+    }
+}
+
+// MARK: - Handle Error
+
+extension ProfileViewModel {
+    private func handleError(error: NetworkClientError) {
+        switch error {
+        case .sessionInvalid:
+            onAction(.redirectToAuth)
+        default:
+            // TODO: - Handle Error
+            print(error)
         }
     }
 }

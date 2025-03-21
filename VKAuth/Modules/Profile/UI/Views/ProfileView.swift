@@ -61,9 +61,9 @@ extension ProfileView {
         lastNameLabelView.configure(placeholder: "Фамилия", value: lastName)
     }
     
-    func configureAvatar(avatar: String) {
+    func configureAvatar(avatar: String?) {
         let placeholder = UIImage(systemName: "person.fill")?.withRenderingMode(.alwaysTemplate)
-        avatarImageView.sd_setImage(with: URL(string: avatar), placeholderImage: placeholder)
+        avatarImageView.sd_setImage(with: URL(string: avatar ?? .init()), placeholderImage: placeholder)
     }
     
     private func hideProfileElements() {

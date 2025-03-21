@@ -20,8 +20,8 @@ final class ModuleBuilder {
         return viewController
     }
     
-    static func createProfileModule() -> ProfileViewController {
-        let viewModel = ProfileViewModel(networkClient: ServiceManager.networkClientService)
+    static func createProfileModule(onAction: @escaping (ProfileViewModel.Action) -> Void) -> ProfileViewController {
+        let viewModel = ProfileViewModel(networkClient: ServiceManager.networkClientService, onAction: onAction)
         let viewController = ProfileViewController(viewModel: viewModel)
         return viewController
     }

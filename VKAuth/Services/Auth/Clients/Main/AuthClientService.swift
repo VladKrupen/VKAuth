@@ -22,6 +22,13 @@ final class AuthClientService: AuthClient {
             requestVKAuthorization(completion: completion)
         }
     }
+    
+    func refreshToken(authType: AuthType, token: Token, completion: @escaping (Result<Token, AuthError>) -> Void) {
+        switch authType {
+        case .vk:
+            refreshVKToken(token: token, completion: completion)
+        }
+    }
 }
 
 // MARK: - Handle
@@ -68,6 +75,21 @@ extension AuthClientService  {
                 self?.authCompletion?(.success(vkToken))
             case .failure(let error):
                 self?.authCompletion?(.failure(error))
+            }
+        }
+    }
+    
+    private func refreshVKToken(token: Token, completion: @escaping (Result<Token, AuthError>) -> Void) {
+        guard let vkToken = token as? VKToken else {
+            completion(.failure(.invalidAuth(.invalidTokenType)))
+            return
+        }
+        vkAuthClient.refreshTokens(vkToken) { result in
+            switch result {
+            case .success(let vkToken):
+                completion(.success(vkToken))
+            case .failure(let error):
+                completion(.failure(.invalidAuth(error)))
             }
         }
     }

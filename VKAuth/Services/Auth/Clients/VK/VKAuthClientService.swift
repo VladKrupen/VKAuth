@@ -107,7 +107,7 @@ extension VKAuthClientService {
 // MARK: - Token Refresh
 
 extension VKAuthClientService {
-    private func refreshTokens(_ vkToken: VKToken, completion: @escaping (Result<VKToken, NetworkError>) -> Void) {
+    func refreshTokens(_ vkToken: VKToken, completion: @escaping (Result<VKToken, NetworkError>) -> Void) {
         let postRequest = NetworkingPostRequest(urlString: "https://id.vk.com/oauth2/auth")
         let bodyDictionary: [String: String] = [
             "grant_type": "refresh_token",

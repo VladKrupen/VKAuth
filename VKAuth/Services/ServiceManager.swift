@@ -28,11 +28,19 @@ final class ServiceManager {
     static private let vkUserInfoClientService = VKUserInfoClientService(httpService: httpService)
     static private let userInfoClientService = UserInfoClientService(vkUserInfoClient: vkUserInfoClientService)
     
+    // MARK: - Refresh Token
+    
+    static private let refreshTokenClientService = RefreshTokenClientService(
+                                                        authClient: authClientService,
+                                                        tokenStorage: tokenStorageService
+                                                    )
+    
     // MARK: - Network
     
     static let networkClientService = NetworkClientService(
-                                                    authClient: authClientService,
-                                                    tokenStorage: tokenStorageService,
-                                                    userInfoClient: userInfoClientService
-                                                )
+                                            authClient: authClientService,
+                                            tokenStorage: tokenStorageService,
+                                            userInfoClient: userInfoClientService,
+                                            refreshTokenClient: refreshTokenClientService
+                                        )
 }
