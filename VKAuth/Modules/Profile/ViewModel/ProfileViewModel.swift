@@ -17,12 +17,10 @@ protocol ProfileViewModelProtocol: AnyObject {
 final class ProfileViewModel: ProfileViewModelProtocol {
     var userPublisher: PassthroughSubject<User, Never> = .init()
     var cancellables: Set<AnyCancellable> = .init()
-    private let authClient: AuthClient
+    private let networkClient: NetworkClient
     
-    init(
-        authClient: AuthClient
-    ) {
-        self.authClient = authClient
+    init(networkClient: NetworkClient) {
+        self.networkClient = networkClient
     }
 }
 
@@ -30,7 +28,7 @@ final class ProfileViewModel: ProfileViewModelProtocol {
 
 extension ProfileViewModel {
     func fetchUserInfo() {
-        authClient.fetchUserInfo { [weak self] result in
+        networkClient.fetchUserInfo { [weak self] result in
             switch result {
             case .success(let user):
                 self?.userPublisher.send(user)

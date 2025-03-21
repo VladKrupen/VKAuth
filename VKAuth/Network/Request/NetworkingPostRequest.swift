@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetworkingPostRequest {
+final class NetworkingPostRequest: NetworkingRequest {
     var bodyDictionary: [String: String]?
     var accessToken: String?
     

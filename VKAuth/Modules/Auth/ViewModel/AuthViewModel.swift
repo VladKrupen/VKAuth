@@ -14,20 +14,19 @@ protocol AuthViewModelProtocol: AnyObject {
 
 final class AuthViewModel: AuthViewModelProtocol {
     private let onAction: (Action) -> Void
-    
-    private let authClientService: AuthClientService
+    private let networkClient: NetworkClient
     
     init(
-        authClientService: AuthClientService,
+        networkClient: NetworkClient,
         onAction: @escaping (Action) -> Void
     ) {
-        self.authClientService = authClientService
+        self.networkClient = networkClient
         self.onAction = onAction
         setupDelegate()
     }
     
     private func setupDelegate() {
-        authClientService.delegate = self
+        networkClient.delegate = self
     }
 }
 
@@ -35,7 +34,7 @@ final class AuthViewModel: AuthViewModelProtocol {
 
 extension AuthViewModel {
     func performAuthorization(for type: AuthType) {
-        authClientService.requestAuthorization(type: type) { [weak self] result in
+        networkClient.requestAuthorization(type: type) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
@@ -53,18 +52,18 @@ extension AuthViewModel {
             // TODO: - Handle Error
             return
         }
-        authClientService.handleAuthCallbackURL(url: url)
+        networkClient.handleAuthCallbackURL(url: url)
     }
 }
 
-// MARK: - AuthClientDelegate
+// MARK: - NetworkClientDelegate
 
-extension AuthViewModel: AuthClientDelegate {
-    func vkAuthorizationSafariURL(url: URL?) {
-        onAction(.authWithURL(.vk, url))
+extension AuthViewModel: NetworkClientDelegate {
+    func authorizationSafariURL(authType: AuthType, url: URL?) {
+        onAction(.authWithURL(authType, url))
     }
     
-    func didFailAuthorization(with error: NetworkError) {
+    func didFailAuthorization(with error: NetworkClientError) {
         // TODO: - Handle Error
         print(error)
     }

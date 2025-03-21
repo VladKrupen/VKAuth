@@ -15,5 +15,4 @@ enum NetworkError: LocalizedError {
     case invalidData
     case decodingError(Swift.Error)
     case invalidTokenType
-    case invalidJsonFormat(String)
 }

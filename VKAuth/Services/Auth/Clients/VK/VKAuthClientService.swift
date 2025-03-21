@@ -9,8 +9,9 @@ import Foundation
 import CryptoKit
 
 final class VKAuthClientService: VKAuthClient {
+    static let clientId: String = "53279842"
+    
     private let authURLString: String = "https://id.vk.com/authorize"
-    private let clientId: String = "53279842"
     private let redirectUri: String = "vk53279842://vk.com/blank.html"
     private let state: String = "welcomeToApp"
     private let codeChallengeMethod: String = "S256"
@@ -55,7 +56,7 @@ extension VKAuthClientService {
     func generateSafariAuthURL() -> URL? {
         var urlComponents = URLComponents(string: authURLString)
         urlComponents?.queryItems = [
-            AuthQueryItem.clientId.queryItem(value: clientId),
+            AuthQueryItem.clientId.queryItem(value: Self.clientId),
             AuthQueryItem.redirectUri.queryItem(value: redirectUri),
             AuthQueryItem.state.queryItem(value: state),
             AuthQueryItem.codeChallenge.queryItem(value: codeChallenge),
@@ -81,7 +82,7 @@ extension VKAuthClientService {
         let bodyDictionary: [String: String] = [
             "code": code,
             "code_verifier": codeVerifier,
-            "client_id": clientId,
+            "client_id": Self.clientId,
             "grant_type": "authorization_code",
             "redirect_uri": redirectUri,
             "state": state,
@@ -112,7 +113,7 @@ extension VKAuthClientService {
             "grant_type": "refresh_token",
             "refresh_token": vkToken.refreshToken,
             "device_id": vkToken.deviceId ?? "",
-            "client_id": clientId
+            "client_id": Self.clientId
         ]
         
         postRequest.bodyDictionary = bodyDictionary
@@ -130,30 +131,6 @@ extension VKAuthClientService {
     }
 }
 
-// MARK: - User Info
-
-extension VKAuthClientService {
-    func fetchUserInfo(vkToken: VKToken, completion: @escaping (Result<VKUser, NetworkError>) -> Void) {
-        let postRequest = NetworkingPostRequest(urlString: "https://id.vk.com/oauth2/user_info")
-        let bodyDictionary: [String: String] = [
-            "client_id": clientId
-        ]
-        postRequest.accessToken = vkToken.accessToken
-        postRequest.bodyDictionary = bodyDictionary
-        
-        httpService.makeRequest(request: postRequest) { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let data):
-                let decodeResult = decodeVKUser(data)
-                completion(decodeResult)
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-}
-
 // MARK: - Decode
 
 extension VKAuthClientService {
@@ -162,23 +139,6 @@ extension VKAuthClientService {
             var vkToken = try JSONDecoder().decode(VKToken.self, from: data)
             vkToken.deviceId = deviceId
             return .success(vkToken)
-        } catch {
-            return .failure(.decodingError(error))
-        }
-    }
-    
-    private func decodeVKUser(_ data: Data) -> Result<VKUser, NetworkError> {
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            
-            guard let userDictionary = json?["user"] as? [String: Any] else {
-                return .failure(.invalidJsonFormat("The data is not a dictionary"))
-            }
-            
-            let userData = try JSONSerialization.data(withJSONObject: userDictionary, options: [])
-            let vkUser = try JSONDecoder().decode(VKUser.self, from: userData)
-            
-            return .success(vkUser)
         } catch {
             return .failure(.decodingError(error))
         }

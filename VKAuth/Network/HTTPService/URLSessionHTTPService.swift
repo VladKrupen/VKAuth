@@ -10,7 +10,7 @@ import Foundation
 final class URLSessionHTTPService {
     private let urlSession: URLSession = .shared
     
-    func makeRequest(request: NetworkingPostRequest, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    func makeRequest(request: NetworkingRequest, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         guard let urlRequest = request.makeURLRequest() else {
             completion(.failure(.invalidURL))
             return

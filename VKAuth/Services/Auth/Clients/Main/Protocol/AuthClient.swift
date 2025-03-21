@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AuthClient: AnyObject {
+    var delegate: AuthClientDelegate? { get set }
     func handleAuthCallbackURL(url: URL)
-    func requestAuthorization(type: AuthType, completion: @escaping (Result<Void, AuthError>) -> Void)
-    func fetchUserInfo(completion: @escaping (Result<User, AuthError>) -> Void)
+    func requestAuthorization(type: AuthType, completion: @escaping (Result<Token, AuthError>) -> Void)
 }

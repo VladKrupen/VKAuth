@@ -8,6 +8,5 @@
 import Foundation
 
 enum AuthError: LocalizedError {
-    case invalidAuth
-    case invalidUserInfo
+    case invalidAuth(NetworkError)
 }

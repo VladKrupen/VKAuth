@@ -48,6 +48,20 @@
 		0154907C2D8D40FF008B1ECA /* VKAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0154907B2D8D40FF008B1ECA /* VKAuthClient.swift */; };
 		0154907E2D8D4DE2008B1ECA /* ProfileLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0154907D2D8D4DE2008B1ECA /* ProfileLabelView.swift */; };
 		015490812D8D72D4008B1ECA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 015490802D8D72D4008B1ECA /* SDWebImage */; };
+		015490842D8D83AA008B1ECA /* NetworkClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490832D8D83AA008B1ECA /* NetworkClientService.swift */; };
+		0154908B2D8D862A008B1ECA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0154908A2D8D862A008B1ECA /* NetworkClient.swift */; };
+		0154908E2D8D8F8E008B1ECA /* TokenStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0154908D2D8D8F8E008B1ECA /* TokenStorageService.swift */; };
+		015490912D8D97D7008B1ECA /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490902D8D97D7008B1ECA /* TokenStorage.swift */; };
+		015490942D8D98B8008B1ECA /* TokenStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490932D8D98B8008B1ECA /* TokenStorageError.swift */; };
+		015490982D8D9F0A008B1ECA /* NetworkClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490972D8D9F0A008B1ECA /* NetworkClientError.swift */; };
+		0154909A2D8DA418008B1ECA /* NetworkClientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490992D8DA418008B1ECA /* NetworkClientDelegate.swift */; };
+		0154909E2D8DAB64008B1ECA /* UserInfoClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0154909D2D8DAB64008B1ECA /* UserInfoClientService.swift */; };
+		015490A12D8DAB8C008B1ECA /* UserInfoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490A02D8DAB8C008B1ECA /* UserInfoClient.swift */; };
+		015490A42D8DB0C6008B1ECA /* UserInfoClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490A32D8DB0C6008B1ECA /* UserInfoClientError.swift */; };
+		015490A92D8DCD8A008B1ECA /* VKUserInfoClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490A82D8DCD8A008B1ECA /* VKUserInfoClientService.swift */; };
+		015490AC2D8DCDAB008B1ECA /* VKUserInfoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490AB2D8DCDAB008B1ECA /* VKUserInfoClient.swift */; };
+		015490AF2D8DD19D008B1ECA /* NetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490AE2D8DD19D008B1ECA /* NetworkingRequest.swift */; };
+		015490B12D8DD2C2008B1ECA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490B02D8DD2C2008B1ECA /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +106,20 @@
 		015490762D8D3E9A008B1ECA /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		0154907B2D8D40FF008B1ECA /* VKAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthClient.swift; sourceTree = "<group>"; };
 		0154907D2D8D4DE2008B1ECA /* ProfileLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabelView.swift; sourceTree = "<group>"; };
+		015490832D8D83AA008B1ECA /* NetworkClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientService.swift; sourceTree = "<group>"; };
+		0154908A2D8D862A008B1ECA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		0154908D2D8D8F8E008B1ECA /* TokenStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageService.swift; sourceTree = "<group>"; };
+		015490902D8D97D7008B1ECA /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
+		015490932D8D98B8008B1ECA /* TokenStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageError.swift; sourceTree = "<group>"; };
+		015490972D8D9F0A008B1ECA /* NetworkClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientError.swift; sourceTree = "<group>"; };
+		015490992D8DA418008B1ECA /* NetworkClientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientDelegate.swift; sourceTree = "<group>"; };
+		0154909D2D8DAB64008B1ECA /* UserInfoClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoClientService.swift; sourceTree = "<group>"; };
+		015490A02D8DAB8C008B1ECA /* UserInfoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoClient.swift; sourceTree = "<group>"; };
+		015490A32D8DB0C6008B1ECA /* UserInfoClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoClientError.swift; sourceTree = "<group>"; };
+		015490A82D8DCD8A008B1ECA /* VKUserInfoClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUserInfoClientService.swift; sourceTree = "<group>"; };
+		015490AB2D8DCDAB008B1ECA /* VKUserInfoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUserInfoClient.swift; sourceTree = "<group>"; };
+		015490AE2D8DD19D008B1ECA /* NetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequest.swift; sourceTree = "<group>"; };
+		015490B02D8DD2C2008B1ECA /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		01B5A6152D8857F9008794A2 /* VKAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -284,9 +312,13 @@
 		011EAB3B2D89511F003F615B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				015490B02D8DD2C2008B1ECA /* ServiceManager.swift */,
+				011EAB792D8AE8C6003F615B /* AppConfig */,
 				011EAB442D896C52003F615B /* Auth */,
 				011EAB682D8ACF60003F615B /* Keychain */,
-				011EAB792D8AE8C6003F615B /* AppConfig */,
+				015490822D8D838F008B1ECA /* Network */,
+				0154908C2D8D8F4D008B1ECA /* TokenStorage */,
+				0154909B2D8DAB2B008B1ECA /* UserInfo */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -361,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				011EAB612D89B2D9003F615B /* NetworkingPostRequest.swift */,
+				015490AD2D8DD186008B1ECA /* Protocol */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -507,6 +540,135 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		015490822D8D838F008B1ECA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				015490852D8D850E008B1ECA /* Clients */,
+				015490962D8D9EF4008B1ECA /* Constants */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		015490852D8D850E008B1ECA /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				015490832D8D83AA008B1ECA /* NetworkClientService.swift */,
+				015490872D8D8613008B1ECA /* Protocols */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		015490872D8D8613008B1ECA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0154908A2D8D862A008B1ECA /* NetworkClient.swift */,
+				015490992D8DA418008B1ECA /* NetworkClientDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0154908C2D8D8F4D008B1ECA /* TokenStorage */ = {
+			isa = PBXGroup;
+			children = (
+				0154908D2D8D8F8E008B1ECA /* TokenStorageService.swift */,
+				0154908F2D8D97C9008B1ECA /* Protocol */,
+				015490922D8D988E008B1ECA /* Constants */,
+			);
+			path = TokenStorage;
+			sourceTree = "<group>";
+		};
+		0154908F2D8D97C9008B1ECA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				015490902D8D97D7008B1ECA /* TokenStorage.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		015490922D8D988E008B1ECA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				015490932D8D98B8008B1ECA /* TokenStorageError.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		015490962D8D9EF4008B1ECA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				015490972D8D9F0A008B1ECA /* NetworkClientError.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0154909B2D8DAB2B008B1ECA /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0154909C2D8DAB3C008B1ECA /* Clients */,
+				015490A22D8DB09F008B1ECA /* Constants */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		0154909C2D8DAB3C008B1ECA /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				015490A62D8DCD52008B1ECA /* Main */,
+				015490A72D8DCD6E008B1ECA /* VK */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		0154909F2D8DAB68008B1ECA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				015490A02D8DAB8C008B1ECA /* UserInfoClient.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		015490A22D8DB09F008B1ECA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				015490A32D8DB0C6008B1ECA /* UserInfoClientError.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		015490A62D8DCD52008B1ECA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0154909D2D8DAB64008B1ECA /* UserInfoClientService.swift */,
+				0154909F2D8DAB68008B1ECA /* Protocol */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		015490A72D8DCD6E008B1ECA /* VK */ = {
+			isa = PBXGroup;
+			children = (
+				015490A82D8DCD8A008B1ECA /* VKUserInfoClientService.swift */,
+				015490AA2D8DCD98008B1ECA /* Protocol */,
+			);
+			path = VK;
+			sourceTree = "<group>";
+		};
+		015490AA2D8DCD98008B1ECA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				015490AB2D8DCDAB008B1ECA /* VKUserInfoClient.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		015490AD2D8DD186008B1ECA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				015490AE2D8DD19D008B1ECA /* NetworkingRequest.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		01B5A60C2D8857F9008794A2 = {
 			isa = PBXGroup;
 			children = (
@@ -606,9 +768,11 @@
 				015490772D8D3E9A008B1ECA /* AuthClient.swift in Sources */,
 				011EAB432D895344003F615B /* BaseButton.swift in Sources */,
 				011EAB3F2D895154003F615B /* BaseView.swift in Sources */,
+				015490982D8D9F0A008B1ECA /* NetworkClientError.swift in Sources */,
 				011EAB502D896E90003F615B /* VKAuthClientService.swift in Sources */,
 				011EAB602D89B270003F615B /* RequestRemoteMethod.swift in Sources */,
 				011EAB712D8AE3C4003F615B /* ProfileViewModel.swift in Sources */,
+				015490AC2D8DCDAB008B1ECA /* VKUserInfoClient.swift in Sources */,
 				011EAB0D2D8858C2003F615B /* AppDelegate.swift in Sources */,
 				011EAB3D2D895135003F615B /* AuthView.swift in Sources */,
 				011EAB782D8AE526003F615B /* ProfileCoordinator.swift in Sources */,
@@ -617,24 +781,36 @@
 				011EAB0E2D8858C2003F615B /* SceneDelegate.swift in Sources */,
 				011EAB5B2D898449003F615B /* AuthClientDelegate.swift in Sources */,
 				011EAB732D8AE3FD003F615B /* ProfileViewController.swift in Sources */,
+				015490AF2D8DD19D008B1ECA /* NetworkingRequest.swift in Sources */,
 				011EAB1D2D885A59003F615B /* Coordinator.swift in Sources */,
 				011EAB4B2D896DF2003F615B /* AuthClientService.swift in Sources */,
 				011EAB232D885B84003F615B /* AuthCoordinator.swift in Sources */,
+				0154909E2D8DAB64008B1ECA /* UserInfoClientService.swift in Sources */,
 				011EAB382D8860FA003F615B /* BaseViewController.swift in Sources */,
 				011EAB412D895317003F615B /* AuthButton.swift in Sources */,
+				015490942D8D98B8008B1ECA /* TokenStorageError.swift in Sources */,
 				0154907C2D8D40FF008B1ECA /* VKAuthClient.swift in Sources */,
 				011EAB492D896DA3003F615B /* AuthType.swift in Sources */,
+				0154908E2D8D8F8E008B1ECA /* TokenStorageService.swift in Sources */,
 				011EAB2A2D885E00003F615B /* ModuleBuilder.swift in Sources */,
 				011EAB3A2D88635D003F615B /* AuthViewModel.swift in Sources */,
 				0135991F2D8C458500F0E95E /* User.swift in Sources */,
 				011EAB752D8AE447003F615B /* ProfileView.swift in Sources */,
 				013599212D8C458B00F0E95E /* VKUser.swift in Sources */,
 				011EAB542D8978A1003F615B /* Token.swift in Sources */,
+				015490912D8D97D7008B1ECA /* TokenStorage.swift in Sources */,
 				011EAB1B2D885A19003F615B /* AppCoordinator.swift in Sources */,
+				015490A92D8DCD8A008B1ECA /* VKUserInfoClientService.swift in Sources */,
+				0154908B2D8D862A008B1ECA /* NetworkClient.swift in Sources */,
 				011EAB7F2D8BFD31003F615B /* AuthError.swift in Sources */,
 				011EAB622D89B2D9003F615B /* NetworkingPostRequest.swift in Sources */,
+				0154909A2D8DA418008B1ECA /* NetworkClientDelegate.swift in Sources */,
+				015490B12D8DD2C2008B1ECA /* ServiceManager.swift in Sources */,
+				015490A42D8DB0C6008B1ECA /* UserInfoClientError.swift in Sources */,
 				011EAB6A2D8ACFB5003F615B /* KeychainService.swift in Sources */,
+				015490842D8D83AA008B1ECA /* NetworkClientService.swift in Sources */,
 				011EAB672D8AAB93003F615B /* NetworkError.swift in Sources */,
+				015490A12D8DAB8C008B1ECA /* UserInfoClient.swift in Sources */,
 				0154907E2D8D4DE2008B1ECA /* ProfileLabelView.swift in Sources */,
 				011EAB342D885F55003F615B /* AuthViewController.swift in Sources */,
 				011EAB282D885D82003F615B /* CoordinatorBuilder.swift in Sources */,
