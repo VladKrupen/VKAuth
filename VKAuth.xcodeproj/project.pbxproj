@@ -1,0 +1,874 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		011EAB0D2D8858C2003F615B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB032D8858C2003F615B /* AppDelegate.swift */; };
+		011EAB0E2D8858C2003F615B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB0A2D8858C2003F615B /* SceneDelegate.swift */; };
+		011EAB102D8858C2003F615B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011EAB042D8858C2003F615B /* Assets.xcassets */; };
+		011EAB122D8858C2003F615B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011EAB072D8858C2003F615B /* LaunchScreen.storyboard */; };
+		011EAB1B2D885A19003F615B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB1A2D885A19003F615B /* AppCoordinator.swift */; };
+		011EAB1D2D885A59003F615B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB1C2D885A59003F615B /* Coordinator.swift */; };
+		011EAB1F2D885AAC003F615B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB1E2D885AAC003F615B /* MainCoordinator.swift */; };
+		011EAB232D885B84003F615B /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB222D885B84003F615B /* AuthCoordinator.swift */; };
+		011EAB282D885D82003F615B /* CoordinatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB272D885D82003F615B /* CoordinatorBuilder.swift */; };
+		011EAB2A2D885E00003F615B /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB292D885E00003F615B /* ModuleBuilder.swift */; };
+		011EAB342D885F55003F615B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB332D885F55003F615B /* AuthViewController.swift */; };
+		011EAB382D8860FA003F615B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB372D8860FA003F615B /* BaseViewController.swift */; };
+		011EAB3A2D88635D003F615B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB392D88635D003F615B /* AuthViewModel.swift */; };
+		011EAB3D2D895135003F615B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB3C2D895135003F615B /* AuthView.swift */; };
+		011EAB3F2D895154003F615B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB3E2D895154003F615B /* BaseView.swift */; };
+		011EAB412D895317003F615B /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB402D895317003F615B /* AuthButton.swift */; };
+		011EAB432D895344003F615B /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB422D895344003F615B /* BaseButton.swift */; };
+		011EAB492D896DA3003F615B /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB482D896DA3003F615B /* AuthType.swift */; };
+		011EAB4B2D896DF2003F615B /* AuthClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB4A2D896DF2003F615B /* AuthClientService.swift */; };
+		011EAB502D896E90003F615B /* VKAuthClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB4F2D896E90003F615B /* VKAuthClientService.swift */; };
+		011EAB542D8978A1003F615B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB532D8978A1003F615B /* Token.swift */; };
+		011EAB562D897966003F615B /* VKToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB552D897966003F615B /* VKToken.swift */; };
+		011EAB582D897EE5003F615B /* AuthQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB572D897EE5003F615B /* AuthQueryItem.swift */; };
+		011EAB5B2D898449003F615B /* AuthClientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB5A2D898449003F615B /* AuthClientDelegate.swift */; };
+		011EAB602D89B270003F615B /* RequestRemoteMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB5F2D89B270003F615B /* RequestRemoteMethod.swift */; };
+		011EAB622D89B2D9003F615B /* NetworkingPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB612D89B2D9003F615B /* NetworkingPostRequest.swift */; };
+		011EAB652D8AA2D6003F615B /* URLSessionHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB642D8AA2D6003F615B /* URLSessionHTTPService.swift */; };
+		011EAB672D8AAB93003F615B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB662D8AAB93003F615B /* NetworkError.swift */; };
+		011EAB6A2D8ACFB5003F615B /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB692D8ACFB5003F615B /* KeychainService.swift */; };
+		011EAB712D8AE3C4003F615B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB702D8AE3C4003F615B /* ProfileViewModel.swift */; };
+		011EAB732D8AE3FD003F615B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB722D8AE3FD003F615B /* ProfileViewController.swift */; };
+		011EAB752D8AE447003F615B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB742D8AE447003F615B /* ProfileView.swift */; };
+		011EAB782D8AE526003F615B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB772D8AE526003F615B /* ProfileCoordinator.swift */; };
+		011EAB7D2D8AE991003F615B /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB7C2D8AE991003F615B /* AppConfig.swift */; };
+		011EAB7F2D8BFD31003F615B /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011EAB7E2D8BFD31003F615B /* AuthError.swift */; };
+		0135991F2D8C458500F0E95E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0135991E2D8C458500F0E95E /* User.swift */; };
+		013599212D8C458B00F0E95E /* VKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013599202D8C458B00F0E95E /* VKUser.swift */; };
+		015490772D8D3E9A008B1ECA /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015490762D8D3E9A008B1ECA /* AuthClient.swift */; };
+		0154907C2D8D40FF008B1ECA /* VKAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0154907B2D8D40FF008B1ECA /* VKAuthClient.swift */; };
+		0154907E2D8D4DE2008B1ECA /* ProfileLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0154907D2D8D4DE2008B1ECA /* ProfileLabelView.swift */; };
+		015490812D8D72D4008B1ECA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 015490802D8D72D4008B1ECA /* SDWebImage */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		011EAB032D8858C2003F615B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		011EAB042D8858C2003F615B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		011EAB052D8858C2003F615B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		011EAB062D8858C2003F615B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		011EAB0A2D8858C2003F615B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		011EAB1A2D885A19003F615B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		011EAB1C2D885A59003F615B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		011EAB1E2D885AAC003F615B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		011EAB222D885B84003F615B /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		011EAB272D885D82003F615B /* CoordinatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorBuilder.swift; sourceTree = "<group>"; };
+		011EAB292D885E00003F615B /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		011EAB332D885F55003F615B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		011EAB372D8860FA003F615B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		011EAB392D88635D003F615B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		011EAB3C2D895135003F615B /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		011EAB3E2D895154003F615B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		011EAB402D895317003F615B /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		011EAB422D895344003F615B /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		011EAB482D896DA3003F615B /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
+		011EAB4A2D896DF2003F615B /* AuthClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientService.swift; sourceTree = "<group>"; };
+		011EAB4F2D896E90003F615B /* VKAuthClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthClientService.swift; sourceTree = "<group>"; };
+		011EAB532D8978A1003F615B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		011EAB552D897966003F615B /* VKToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKToken.swift; sourceTree = "<group>"; };
+		011EAB572D897EE5003F615B /* AuthQueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthQueryItem.swift; sourceTree = "<group>"; };
+		011EAB5A2D898449003F615B /* AuthClientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientDelegate.swift; sourceTree = "<group>"; };
+		011EAB5F2D89B270003F615B /* RequestRemoteMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRemoteMethod.swift; sourceTree = "<group>"; };
+		011EAB612D89B2D9003F615B /* NetworkingPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingPostRequest.swift; sourceTree = "<group>"; };
+		011EAB642D8AA2D6003F615B /* URLSessionHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPService.swift; sourceTree = "<group>"; };
+		011EAB662D8AAB93003F615B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		011EAB692D8ACFB5003F615B /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		011EAB702D8AE3C4003F615B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		011EAB722D8AE3FD003F615B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		011EAB742D8AE447003F615B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		011EAB772D8AE526003F615B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		011EAB7C2D8AE991003F615B /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		011EAB7E2D8BFD31003F615B /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		0135991E2D8C458500F0E95E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		013599202D8C458B00F0E95E /* VKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUser.swift; sourceTree = "<group>"; };
+		015490762D8D3E9A008B1ECA /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
+		0154907B2D8D40FF008B1ECA /* VKAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthClient.swift; sourceTree = "<group>"; };
+		0154907D2D8D4DE2008B1ECA /* ProfileLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabelView.swift; sourceTree = "<group>"; };
+		01B5A6152D8857F9008794A2 /* VKAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01B5A6122D8857F9008794A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				015490812D8D72D4008B1ECA /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		011EAB0C2D8858C2003F615B /* VKAuth */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB142D8858EF003F615B /* Application */,
+				011EAB242D885D53003F615B /* Builders */,
+				011EAB172D8859F6003F615B /* Coordinator */,
+				0135991A2D8C453A00F0E95E /* Entitys */,
+				011EAB2B2D885F12003F615B /* Modules */,
+				011EAB5C2D89B1EB003F615B /* Network */,
+				011EAB152D88592E003F615B /* Resources */,
+				011EAB3B2D89511F003F615B /* Services */,
+				011EAB352D8860E5003F615B /* Shared */,
+			);
+			path = VKAuth;
+			sourceTree = "<group>";
+		};
+		011EAB142D8858EF003F615B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB032D8858C2003F615B /* AppDelegate.swift */,
+				011EAB0A2D8858C2003F615B /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		011EAB152D88592E003F615B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB042D8858C2003F615B /* Assets.xcassets */,
+				011EAB052D8858C2003F615B /* Info.plist */,
+				011EAB072D8858C2003F615B /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		011EAB172D8859F6003F615B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB192D885A04003F615B /* Coordinators */,
+				011EAB182D8859FF003F615B /* Protocols */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		011EAB182D8859FF003F615B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB1A2D885A19003F615B /* AppCoordinator.swift */,
+				011EAB1C2D885A59003F615B /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		011EAB192D885A04003F615B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB202D885B62003F615B /* Main */,
+				011EAB212D885B6C003F615B /* Auth */,
+				011EAB762D8AE50E003F615B /* Profile */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		011EAB202D885B62003F615B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB1E2D885AAC003F615B /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		011EAB212D885B6C003F615B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB222D885B84003F615B /* AuthCoordinator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		011EAB242D885D53003F615B /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB262D885D73003F615B /* Coordinators */,
+				011EAB252D885D66003F615B /* Modules */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		011EAB252D885D66003F615B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB292D885E00003F615B /* ModuleBuilder.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		011EAB262D885D73003F615B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB272D885D82003F615B /* CoordinatorBuilder.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		011EAB2B2D885F12003F615B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB2C2D885F25003F615B /* Auth */,
+				011EAB6B2D8AE333003F615B /* Profile */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		011EAB2C2D885F25003F615B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB322D885F44003F615B /* ViewModel */,
+				011EAB2F2D885F35003F615B /* UI */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		011EAB2F2D885F35003F615B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB302D885F38003F615B /* Controller */,
+				011EAB312D885F3D003F615B /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		011EAB302D885F38003F615B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB332D885F55003F615B /* AuthViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		011EAB312D885F3D003F615B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB3C2D895135003F615B /* AuthView.swift */,
+				011EAB402D895317003F615B /* AuthButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011EAB322D885F44003F615B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB392D88635D003F615B /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		011EAB352D8860E5003F615B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB362D8860E8003F615B /* Base */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		011EAB362D8860E8003F615B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB372D8860FA003F615B /* BaseViewController.swift */,
+				011EAB3E2D895154003F615B /* BaseView.swift */,
+				011EAB422D895344003F615B /* BaseButton.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		011EAB3B2D89511F003F615B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB442D896C52003F615B /* Auth */,
+				011EAB682D8ACF60003F615B /* Keychain */,
+				011EAB792D8AE8C6003F615B /* AppConfig */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		011EAB442D896C52003F615B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB4C2D896DFE003F615B /* Clients */,
+				011EAB462D896D8A003F615B /* Constants */,
+				011EAB522D89788C003F615B /* Models */,
+				011EAB512D89787A003F615B /* Protocols */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		011EAB462D896D8A003F615B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB482D896DA3003F615B /* AuthType.swift */,
+				011EAB572D897EE5003F615B /* AuthQueryItem.swift */,
+				011EAB7E2D8BFD31003F615B /* AuthError.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		011EAB4C2D896DFE003F615B /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				013599242D8C59D500F0E95E /* Main */,
+				011EAB592D898257003F615B /* VK */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		011EAB512D89787A003F615B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB532D8978A1003F615B /* Token.swift */,
+				011EAB5A2D898449003F615B /* AuthClientDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		011EAB522D89788C003F615B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB552D897966003F615B /* VKToken.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		011EAB592D898257003F615B /* VK */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB4F2D896E90003F615B /* VKAuthClientService.swift */,
+				015490782D8D3F4B008B1ECA /* Protocol */,
+			);
+			path = VK;
+			sourceTree = "<group>";
+		};
+		011EAB5C2D89B1EB003F615B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB632D8AA2B6003F615B /* HTTPService */,
+				011EAB5E2D89B258003F615B /* Constants */,
+				011EAB5D2D89B207003F615B /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		011EAB5D2D89B207003F615B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB612D89B2D9003F615B /* NetworkingPostRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		011EAB5E2D89B258003F615B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB5F2D89B270003F615B /* RequestRemoteMethod.swift */,
+				011EAB662D8AAB93003F615B /* NetworkError.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		011EAB632D8AA2B6003F615B /* HTTPService */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB642D8AA2D6003F615B /* URLSessionHTTPService.swift */,
+			);
+			path = HTTPService;
+			sourceTree = "<group>";
+		};
+		011EAB682D8ACF60003F615B /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB692D8ACFB5003F615B /* KeychainService.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		011EAB6B2D8AE333003F615B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB6F2D8AE3B0003F615B /* ViewModel */,
+				011EAB6C2D8AE3A0003F615B /* UI */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		011EAB6C2D8AE3A0003F615B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB6E2D8AE3AC003F615B /* Controller */,
+				011EAB6D2D8AE3A2003F615B /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		011EAB6D2D8AE3A2003F615B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB742D8AE447003F615B /* ProfileView.swift */,
+				0154907D2D8D4DE2008B1ECA /* ProfileLabelView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011EAB6E2D8AE3AC003F615B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB722D8AE3FD003F615B /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		011EAB6F2D8AE3B0003F615B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB702D8AE3C4003F615B /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		011EAB762D8AE50E003F615B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB772D8AE526003F615B /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		011EAB792D8AE8C6003F615B /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB7C2D8AE991003F615B /* AppConfig.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		0135991A2D8C453A00F0E95E /* Entitys */ = {
+			isa = PBXGroup;
+			children = (
+				0135991B2D8C455200F0E95E /* User */,
+			);
+			path = Entitys;
+			sourceTree = "<group>";
+		};
+		0135991B2D8C455200F0E95E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				013599232D8C46C100F0E95E /* Model */,
+				013599222D8C46BB00F0E95E /* Protocol */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		013599222D8C46BB00F0E95E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0135991E2D8C458500F0E95E /* User.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		013599232D8C46C100F0E95E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				013599202D8C458B00F0E95E /* VKUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		013599242D8C59D500F0E95E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				011EAB4A2D896DF2003F615B /* AuthClientService.swift */,
+				015490742D8D3E84008B1ECA /* Protocol */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		015490742D8D3E84008B1ECA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				015490762D8D3E9A008B1ECA /* AuthClient.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		015490782D8D3F4B008B1ECA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0154907B2D8D40FF008B1ECA /* VKAuthClient.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		01B5A60C2D8857F9008794A2 = {
+			isa = PBXGroup;
+			children = (
+				011EAB0C2D8858C2003F615B /* VKAuth */,
+				01B5A6162D8857F9008794A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01B5A6162D8857F9008794A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01B5A6152D8857F9008794A2 /* VKAuth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01B5A6142D8857F9008794A2 /* VKAuth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01B5A6282D8857FB008794A2 /* Build configuration list for PBXNativeTarget "VKAuth" */;
+			buildPhases = (
+				01B5A6112D8857F9008794A2 /* Sources */,
+				01B5A6122D8857F9008794A2 /* Frameworks */,
+				01B5A6132D8857F9008794A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VKAuth;
+			packageProductDependencies = (
+				015490802D8D72D4008B1ECA /* SDWebImage */,
+			);
+			productName = VKAuth;
+			productReference = 01B5A6152D8857F9008794A2 /* VKAuth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01B5A60D2D8857F9008794A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					01B5A6142D8857F9008794A2 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 01B5A6102D8857F9008794A2 /* Build configuration list for PBXProject "VKAuth" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01B5A60C2D8857F9008794A2;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0154907F2D8D72D4008B1ECA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 01B5A6162D8857F9008794A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01B5A6142D8857F9008794A2 /* VKAuth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01B5A6132D8857F9008794A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				011EAB102D8858C2003F615B /* Assets.xcassets in Resources */,
+				011EAB122D8858C2003F615B /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01B5A6112D8857F9008794A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				011EAB582D897EE5003F615B /* AuthQueryItem.swift in Sources */,
+				011EAB7D2D8AE991003F615B /* AppConfig.swift in Sources */,
+				011EAB1F2D885AAC003F615B /* MainCoordinator.swift in Sources */,
+				015490772D8D3E9A008B1ECA /* AuthClient.swift in Sources */,
+				011EAB432D895344003F615B /* BaseButton.swift in Sources */,
+				011EAB3F2D895154003F615B /* BaseView.swift in Sources */,
+				011EAB502D896E90003F615B /* VKAuthClientService.swift in Sources */,
+				011EAB602D89B270003F615B /* RequestRemoteMethod.swift in Sources */,
+				011EAB712D8AE3C4003F615B /* ProfileViewModel.swift in Sources */,
+				011EAB0D2D8858C2003F615B /* AppDelegate.swift in Sources */,
+				011EAB3D2D895135003F615B /* AuthView.swift in Sources */,
+				011EAB782D8AE526003F615B /* ProfileCoordinator.swift in Sources */,
+				011EAB652D8AA2D6003F615B /* URLSessionHTTPService.swift in Sources */,
+				011EAB562D897966003F615B /* VKToken.swift in Sources */,
+				011EAB0E2D8858C2003F615B /* SceneDelegate.swift in Sources */,
+				011EAB5B2D898449003F615B /* AuthClientDelegate.swift in Sources */,
+				011EAB732D8AE3FD003F615B /* ProfileViewController.swift in Sources */,
+				011EAB1D2D885A59003F615B /* Coordinator.swift in Sources */,
+				011EAB4B2D896DF2003F615B /* AuthClientService.swift in Sources */,
+				011EAB232D885B84003F615B /* AuthCoordinator.swift in Sources */,
+				011EAB382D8860FA003F615B /* BaseViewController.swift in Sources */,
+				011EAB412D895317003F615B /* AuthButton.swift in Sources */,
+				0154907C2D8D40FF008B1ECA /* VKAuthClient.swift in Sources */,
+				011EAB492D896DA3003F615B /* AuthType.swift in Sources */,
+				011EAB2A2D885E00003F615B /* ModuleBuilder.swift in Sources */,
+				011EAB3A2D88635D003F615B /* AuthViewModel.swift in Sources */,
+				0135991F2D8C458500F0E95E /* User.swift in Sources */,
+				011EAB752D8AE447003F615B /* ProfileView.swift in Sources */,
+				013599212D8C458B00F0E95E /* VKUser.swift in Sources */,
+				011EAB542D8978A1003F615B /* Token.swift in Sources */,
+				011EAB1B2D885A19003F615B /* AppCoordinator.swift in Sources */,
+				011EAB7F2D8BFD31003F615B /* AuthError.swift in Sources */,
+				011EAB622D89B2D9003F615B /* NetworkingPostRequest.swift in Sources */,
+				011EAB6A2D8ACFB5003F615B /* KeychainService.swift in Sources */,
+				011EAB672D8AAB93003F615B /* NetworkError.swift in Sources */,
+				0154907E2D8D4DE2008B1ECA /* ProfileLabelView.swift in Sources */,
+				011EAB342D885F55003F615B /* AuthViewController.swift in Sources */,
+				011EAB282D885D82003F615B /* CoordinatorBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		011EAB072D8858C2003F615B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				011EAB062D8858C2003F615B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01B5A6292D8857FB008794A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57V9Y33D2J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VKAuth/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VladKrupen.by.VKAuth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		01B5A62A2D8857FB008794A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57V9Y33D2J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VKAuth/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VladKrupen.by.VKAuth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		01B5A62B2D8857FB008794A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		01B5A62C2D8857FB008794A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01B5A6102D8857F9008794A2 /* Build configuration list for PBXProject "VKAuth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01B5A62B2D8857FB008794A2 /* Debug */,
+				01B5A62C2D8857FB008794A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01B5A6282D8857FB008794A2 /* Build configuration list for PBXNativeTarget "VKAuth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01B5A6292D8857FB008794A2 /* Debug */,
+				01B5A62A2D8857FB008794A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0154907F2D8D72D4008B1ECA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		015490802D8D72D4008B1ECA /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0154907F2D8D72D4008B1ECA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 01B5A60D2D8857F9008794A2 /* Project object */;
+}
