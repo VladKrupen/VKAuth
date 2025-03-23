@@ -66,7 +66,7 @@ extension TokenStorageService {
             case .success:
                 completion(.success(()))
             case .failure(let error):
-                completion(.failure(.saveTokenError(error)))
+                completion(.failure(.keychainError(error)))
             }
         }
     }
@@ -77,8 +77,7 @@ extension TokenStorageService {
             case .success(let token):
                 completion(.success(token))
             case .failure(let error):
-                print(error)
-                completion(.failure(.tokenNotFoundError(error)))
+                completion(.failure(.keychainError(error)))
             }
         }
     }

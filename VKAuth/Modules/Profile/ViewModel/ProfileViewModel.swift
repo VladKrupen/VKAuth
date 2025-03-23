@@ -12,6 +12,7 @@ protocol ProfileViewModelProtocol: AnyObject {
     var userPublisher: PassthroughSubject<User, Never> { get }
     var cancellables: Set<AnyCancellable> { get set }
     func fetchUserInfo()
+    func logout()
 }
 
 final class ProfileViewModel: ProfileViewModelProtocol {
@@ -39,6 +40,20 @@ extension ProfileViewModel {
                 self?.userPublisher.send(user)
             case .failure(let error):
                 self?.handleError(error: error)
+            }
+        }
+    }
+    
+    func logout() {
+        networkClient.logout { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self?.onAction(.redirectToAuth)
+                case .failure(let error):
+                    // TODO: - Handle Error
+                    print(error)
+                }
             }
         }
     }

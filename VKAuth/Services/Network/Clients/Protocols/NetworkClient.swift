@@ -12,4 +12,5 @@ protocol NetworkClient: AnyObject {
     func requestAuthorization(type: AuthType, completion: @escaping (Result<Void, NetworkClientError>) -> Void)
     func handleAuthCallbackURL(url: URL)
     func fetchUserInfo(completion: @escaping (Result<User, NetworkClientError>) -> Void)
+    func logout(completion: @escaping (Result<Void, NetworkClientError>) -> Void)
 }

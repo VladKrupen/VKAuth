@@ -131,6 +131,30 @@ extension VKAuthClientService {
     }
 }
 
+// MARK: - Logout
+
+extension VKAuthClientService {
+    func invalidateToken(_ vkToken: VKToken, completion: @escaping (Result<Void, AuthError>) -> Void) {
+        let postRequest = NetworkingPostRequest(urlString: "https://id.vk.com/oauth2/logout")
+        let bodyDictionary: [String: String] = [
+            "client_id": Self.clientId
+        ]
+        postRequest.accessToken = vkToken.accessToken
+        postRequest.bodyDictionary = bodyDictionary
+        
+        httpService.makeRequest(request: postRequest) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let data):
+                let decodeResult = decodeLogoutResponse(data)
+                completion(decodeResult)
+            case .failure(let error):
+                completion(.failure(.invalidAuth(error)))
+            }
+        }
+    }
+}
+
 // MARK: - Decode
 
 extension VKAuthClientService {
@@ -141,6 +165,27 @@ extension VKAuthClientService {
             return .success(vkToken)
         } catch {
             return .failure(.decodingError(error))
+        }
+    }
+    
+    private func decodeLogoutResponse(_ data: Data) -> Result<Void, AuthError> {
+        do {
+            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                return .failure(.invalidLogout(.invalidJsonFormar("The data is not a dictionary")))
+            }
+            
+            if let response = json["response"] as? Int, response == 1 {
+                return .success(())
+            }
+            
+            if let errorResponse = json["error"] as? String {
+                let vkError = VKError(rawValue: errorResponse)
+                return .failure(.vkError(vkError))
+            }
+            
+            return .failure(.invalidLogout(.invalidJsonFormar("The data is not a dictionary")))
+        } catch {
+            return .failure(.invalidLogout(.decodingError(error)))
         }
     }
 }

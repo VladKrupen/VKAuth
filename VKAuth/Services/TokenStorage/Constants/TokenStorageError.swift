@@ -8,6 +8,5 @@
 import Foundation
 
 enum TokenStorageError: LocalizedError {
-    case saveTokenError(KeychainService.KeychainError)
-    case tokenNotFoundError(KeychainService.KeychainError)
+    case keychainError(KeychainService.KeychainError)
 }

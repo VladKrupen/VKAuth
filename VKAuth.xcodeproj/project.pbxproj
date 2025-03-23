@@ -66,6 +66,7 @@
 		01652C492D8DFCC4002F08EC /* RefreshTokenClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01652C482D8DFCC4002F08EC /* RefreshTokenClientService.swift */; };
 		01652C4B2D8DFEC4002F08EC /* RefreshTokenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01652C4A2D8DFEC4002F08EC /* RefreshTokenError.swift */; };
 		01652C4F2D8DFFBE002F08EC /* RefreshTokenClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01652C4E2D8DFFBE002F08EC /* RefreshTokenClient.swift */; };
+		01DD589E2D9029C0006FB81C /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DD589D2D9029C0006FB81C /* UIViewController+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,7 @@
 		01652C4A2D8DFEC4002F08EC /* RefreshTokenError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenError.swift; sourceTree = "<group>"; };
 		01652C4E2D8DFFBE002F08EC /* RefreshTokenClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenClient.swift; sourceTree = "<group>"; };
 		01B5A6152D8857F9008794A2 /* VKAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01DD589D2D9029C0006FB81C /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				011EAB242D885D53003F615B /* Builders */,
 				011EAB172D8859F6003F615B /* Coordinator */,
 				0135991A2D8C453A00F0E95E /* Entitys */,
+				01DD589A2D902582006FB81C /* Extensions */,
 				011EAB2B2D885F12003F615B /* Modules */,
 				011EAB5C2D89B1EB003F615B /* Network */,
 				011EAB152D88592E003F615B /* Resources */,
@@ -721,6 +724,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		01DD589A2D902582006FB81C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01DD589D2D9029C0006FB81C /* UIViewController+Ex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -826,6 +837,7 @@
 				011EAB382D8860FA003F615B /* BaseViewController.swift in Sources */,
 				011EAB412D895317003F615B /* AuthButton.swift in Sources */,
 				015490942D8D98B8008B1ECA /* TokenStorageError.swift in Sources */,
+				01DD589E2D9029C0006FB81C /* UIViewController+Ex.swift in Sources */,
 				0154907C2D8D40FF008B1ECA /* VKAuthClient.swift in Sources */,
 				011EAB492D896DA3003F615B /* AuthType.swift in Sources */,
 				0154908E2D8D8F8E008B1ECA /* TokenStorageService.swift in Sources */,

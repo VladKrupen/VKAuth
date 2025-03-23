@@ -9,4 +9,6 @@ import Foundation
 
 enum AuthError: LocalizedError {
     case invalidAuth(NetworkError)
+    case invalidLogout(NetworkError)
+    case vkError(VKError)
 }

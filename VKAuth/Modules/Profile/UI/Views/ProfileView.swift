@@ -37,6 +37,16 @@ final class ProfileView: BaseView {
         return $0
     }(UIStackView())
     
+    let logoutButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Выйти", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.layer.cornerRadius = 16
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.black.cgColor
+        return $0
+    }(UIButton(type: .system))
+    
     // MARK: - Init
     
     init() {
@@ -53,6 +63,7 @@ extension ProfileView {
     func showProfileElements() {
         avatarImageView.isHidden = false
         infoCardView.isHidden = false
+        logoutButton.isHidden = false
     }
     
     func configureInfoCard(firstName: String, lastName: String) {
@@ -69,6 +80,7 @@ extension ProfileView {
     private func hideProfileElements() {
         avatarImageView.isHidden = true
         infoCardView.isHidden = true
+        logoutButton.isHidden = true
     }
 }
 
@@ -78,6 +90,7 @@ extension ProfileView {
     private func layoutElements() {
         layoutAvatarImageView()
         layoutInfoCardView()
+        layoutLogoutButton()
     }
     
     private func layoutAvatarImageView() {
@@ -100,6 +113,17 @@ extension ProfileView {
             infoCardView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 40),
             infoCardView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             infoCardView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+        ])
+    }
+    
+    private func layoutLogoutButton() {
+        addSubview(logoutButton)
+        
+        NSLayoutConstraint.activate([
+            logoutButton.heightAnchor.constraint(equalToConstant: 50),
+            logoutButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            logoutButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            logoutButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
     

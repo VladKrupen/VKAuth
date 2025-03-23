@@ -33,6 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     func handleAuthURL(url: URL?) {
         if let authViewController = getCurrentViewController() as? AuthViewController {
+            authViewController.showSpiner()
             authViewController.processAuthCallbackURL(url: url)
         }
     }

@@ -65,6 +65,22 @@ extension NetworkClientService {
             }
         }
     }
+    
+    func logout(completion: @escaping (Result<Void, NetworkClientError>) -> Void) {
+        guard let authType = AppConfig.shared.authType else {
+            completion(.failure(.authTypeError))
+            return
+        }
+        
+        tokenStorage.getToken(authType: authType) { [weak self] result in
+            switch result {
+            case .success(let token):
+                self?.invalidateToken(authType: authType, token: token, completion: completion)
+            case .failure(let error):
+                completion(.failure(.tokenStorageError(error)))
+            }
+        }
+    }
 }
 
 // MARK: - Token Storage
@@ -92,7 +108,7 @@ extension NetworkClientService {
             case .success(let user):
                 completion(.success(user))
             case .failure(let error):
-                self?.handleError(error: error, token: token, completion: completion)
+                self?.handleUserInfoClientError(error: error, token: token, completion: completion)
             }
         }
     }
@@ -101,24 +117,50 @@ extension NetworkClientService {
 // MARK: - Handle Error
 
 extension NetworkClientService {
-    private func handleError(error: UserInfoClientError, token: Token, completion: @escaping (Result<User, NetworkClientError>) -> Void) {
+    
+    // MARK: - UserInfoClientError
+    
+    private func handleUserInfoClientError(error: UserInfoClientError, token: Token, completion: @escaping (Result<User, NetworkClientError>) -> Void) {
         switch error {
         case .vkError(let vKError):
-            handleVKError(vkError: vKError, token: token, completion: completion)
+            handleVKErrorForFetchUser(vkError: vKError, token: token, completion: completion)
         default:
             completion(.failure(.userInfoError(error)))
         }
     }
     
-    private func handleVKError(vkError: VKError, token: Token, completion: @escaping (Result<User, NetworkClientError>) -> Void) {
+    // MARK: - AuthError
+    
+    private func handleAuthError(error: AuthError, token: Token, completion: @escaping (Result<Void, NetworkClientError>) -> Void) {
+        switch error {
+        case .vkError(let vKError):
+            handleVKErrorForLogout(vkError: vKError, token: token, completion: completion)
+        default:
+            completion(.failure(.authError(error)))
+        }
+    }
+    
+    // MARK: - VKError
+    
+    private func handleVKErrorForFetchUser(vkError: VKError, token: Token, completion: @escaping (Result<User, NetworkClientError>) -> Void) {
         switch vkError {
         case .invalidToken:
-            // TODO: - refresh
-            refreshToken(authType: .vk, token: token, completion: completion)
+            refreshTokenForFetchUserInfo(authType: .vk, token: token, completion: completion)
         case .accessDenied, .invalidClient:
             completion(.failure(.sessionInvalid))
         default:
             completion(.failure(.userInfoError(.vkError(vkError))))
+        }
+    }
+    
+    private func handleVKErrorForLogout(vkError: VKError, token: Token, completion: @escaping (Result<Void, NetworkClientError>) -> Void) {
+        switch vkError {
+        case .invalidToken:
+            refreshTokenForLogout(authType: .vk, token: token, completion: completion)
+        case .accessDenied, .invalidClient:
+            completion(.failure(.sessionInvalid))
+        default:
+            completion(.failure(.authError(.vkError(vkError))))
         }
     }
 }
@@ -126,13 +168,39 @@ extension NetworkClientService {
 // MARK: - RefreshTokenClient
 
 extension NetworkClientService {
-    private func refreshToken(authType: AuthType, token: Token, completion: @escaping (Result<User, NetworkClientError>) -> Void) {
+    private func refreshTokenForFetchUserInfo(authType: AuthType, token: Token, completion: @escaping (Result<User, NetworkClientError>) -> Void) {
         refreshTokenClient.refreshToken(authType: authType, token: token) { [weak self] result in
             switch result {
             case .success(let token):
                 self?.fetchUserInfo(authType: authType, token: token, completion: completion)
             case .failure(let error):
                 completion(.failure(.refreshTokenError(error)))
+            }
+        }
+    }
+    
+    private func refreshTokenForLogout(authType: AuthType, token: Token, completion: @escaping (Result<Void, NetworkClientError>) -> Void) {
+        refreshTokenClient.refreshToken(authType: authType, token: token) { [weak self] result in
+            switch result {
+            case .success:
+                self?.logout(completion: completion)
+            case .failure(let error):
+                completion(.failure(.refreshTokenError(error)))
+            }
+        }
+    }
+}
+
+// MARK: - Logout
+
+extension NetworkClientService {
+    private func invalidateToken(authType: AuthType, token: Token, completion: @escaping (Result<Void, NetworkClientError>) -> Void) {
+        authClient.invalidateToken(authType: authType, token: token) { [weak self] result in
+            switch result {
+            case .success(let void):
+                completion(.success(void))
+            case .failure(let error):
+                self?.handleAuthError(error: error, token: token, completion: completion)
             }
         }
     }

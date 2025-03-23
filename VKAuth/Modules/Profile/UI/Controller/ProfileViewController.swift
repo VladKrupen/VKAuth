@@ -28,8 +28,13 @@ final class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTarget()
         setupBindings()
         viewModel.fetchUserInfo()
+    }
+    
+    private func setupTarget() {
+        contentView.logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
     }
 }
 
@@ -56,5 +61,16 @@ extension ProfileViewController {
         )
         contentView.configureAvatar(avatar: user.avatar)
         contentView.showProfileElements()
+    }
+}
+
+// MARK: - OBJC
+
+extension ProfileViewController {
+    @objc private func logoutButtonTapped() {
+        showDestructiveAlert(title: "Выйти", message: "Вы действительно хотите выйти из вашего аккаунт?") { [weak self] in
+            self?.showSpiner()
+            self?.viewModel.logout()
+        }
     }
 }
