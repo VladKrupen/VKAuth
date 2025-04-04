@@ -45,6 +45,7 @@ final class AuthView: BaseView {
     // MARK: - Layout
     
     private func layoutElements() {
+        self.layoutMargins = .init(top: .zero, left: 20, bottom: .zero, right: 20)
         layoutTitleLabel()
         layoutAuthButtonsStackView()
     }
@@ -54,8 +55,8 @@ final class AuthView: BaseView {
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
         ])
     }
     
@@ -64,8 +65,8 @@ final class AuthView: BaseView {
         addSubview(authButtonsStackView)
         
         NSLayoutConstraint.activate([
-            vkAuthButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            vkAuthButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            vkAuthButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            vkAuthButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             authButtonsStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
     }

@@ -88,6 +88,7 @@ extension ProfileView {
 
 extension ProfileView {
     private func layoutElements() {
+        self.layoutMargins = .init(top: .zero, left: 16, bottom: .zero, right: 16)
         layoutAvatarImageView()
         layoutInfoCardView()
         layoutLogoutButton()
@@ -111,8 +112,8 @@ extension ProfileView {
         
         NSLayoutConstraint.activate([
             infoCardView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 40),
-            infoCardView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            infoCardView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            infoCardView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            infoCardView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
         ])
     }
     
@@ -121,8 +122,8 @@ extension ProfileView {
         
         NSLayoutConstraint.activate([
             logoutButton.heightAnchor.constraint(equalToConstant: 50),
-            logoutButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            logoutButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            logoutButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            logoutButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             logoutButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }

@@ -30,11 +30,16 @@ final class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         setupTarget()
         setupBindings()
-        viewModel.fetchUserInfo()
     }
     
     private func setupTarget() {
         contentView.logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showSpiner()
+        viewModel.fetchUserInfo()
     }
 }
 
@@ -46,6 +51,7 @@ extension ProfileViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] user in
                 self?.configureView(user: user)
+                self?.hideSpiner()
             }
             .store(in: &viewModel.cancellables)
     }
